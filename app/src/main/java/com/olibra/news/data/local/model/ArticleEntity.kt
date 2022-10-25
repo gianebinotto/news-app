@@ -1,4 +1,4 @@
-package com.olibra.news.data.db.model
+package com.olibra.news.data.local.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
