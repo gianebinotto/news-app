@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetArticlesReadUseCase @Inject constructor(
     private val articleReadRepository: ArticleReadRepository
 ) {
-    operator fun invoke(): Single<String> {
-        return articleReadRepository.getAll()
+    operator fun invoke(): Single<List<String>> {
+        return articleReadRepository.getArticlesRead()
     }
 }
