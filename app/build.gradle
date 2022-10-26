@@ -21,7 +21,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", 'BASE_URL', '"https://inshorts.deta.dev"'
+        }
+
         release {
+            buildConfigField "String", 'BASE_URL', '"https://inshorts.deta.dev"'
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
