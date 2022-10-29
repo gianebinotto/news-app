@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/articleImageView"
+        android:layout_width="@dimen/article_list_image_width"
+        android:layout_height="@dimen/article_list_image_height"
+        android:importantForAccessibility="no"
+        android:layout_marginVertical="@dimen/spacing_04"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@drawable/article_loading_placeholder"/>
+
+    <TextView
+        android:id="@+id/articleDateTextView"
+        android:layout_width="@dimen/spacing_none"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_05"
+        android:layout_marginEnd="@dimen/spacing_04"
+        android:layout_marginTop="@dimen/spacing_03"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/text_color_secondary"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/articleTitleTextView"
+        app:layout_constraintStart_toEndOf="@+id/articleImageView"
+        app:layout_constraintEnd_toStartOf="@+id/articleReadImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        tools:text="MM/DD/YYYY"/>
+
+    <TextView
+        android:id="@+id/articleTitleTextView"
+        android:layout_width="@dimen/spacing_none"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_05"
+        android:layout_marginEnd="@dimen/spacing_04"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/articleDateTextView"
+        app:layout_constraintBottom_toTopOf="@+id/articleAuthorTextView"
+        app:layout_constraintStart_toEndOf="@+id/articleImageView"
+        app:layout_constraintEnd_toStartOf="@+id/articleReadImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        tools:text="Article name"/>
+
+    <TextView
+        android:id="@+id/articleAuthorTextView"
+        android:layout_width="@dimen/spacing_none"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_05"
+        android:layout_marginEnd="@dimen/spacing_04"
+        android:layout_marginBottom="@dimen/spacing_04"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/text_color_secondary"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/articleTitleTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/articleImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        tools:text="Author name"/>
+
+    <ImageView
+        android:id="@+id/articleReadImageView"
+        android:layout_width="@dimen/article_read_image_width"
+        android:layout_height="@dimen/article_read_image_height"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/spacing_04"
+        android:layout_marginEnd="@dimen/spacing_04"
+        android:importantForAccessibility="yes"
+        android:contentDescription="@string/content_desc_article_read"
+        android:src="@drawable/ic_article_read"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible"/>
+
+    <View
+        android:layout_width="@dimen/spacing_none"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginStart="@dimen/spacing_05"
+        android:background="@color/divider_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/articleImageView"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
