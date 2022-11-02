@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:src="@drawable/article_loading_placeholder"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/articleDateTextView"
         android:layout_width="@dimen/spacing_none"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         tools:text="MM/DD/YYYY"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/articleTitleTextView"
         android:layout_width="@dimen/spacing_none"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         tools:text="Article name"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/articleAuthorTextView"
         android:layout_width="@dimen/spacing_none"
         android:layout_height="wrap_content"
