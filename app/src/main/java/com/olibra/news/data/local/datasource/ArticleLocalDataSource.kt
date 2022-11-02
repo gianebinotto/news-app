@@ -1,9 +1,10 @@
 package com.olibra.news.data.local.datasource
 
 import com.olibra.news.domain.model.Article
-import io.reactivex.Single
+import io.reactivex.Completable
+import io.reactivex.Flowable
 
 interface ArticleLocalDataSource {
-    fun getArticles(category: String): Single<List<Article>>
-    fun addArticles(articles: List<Article>, category: String)
+    fun getArticles(category: String): Flowable<List<Article>>
+    fun addArticles(articles: List<Article>, category: String): Completable
 }
