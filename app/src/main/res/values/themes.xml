@@ -14,6 +14,4 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.News.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
-
 </resources>
