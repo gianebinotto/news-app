@@ -17,16 +17,12 @@ class ArticleRepositoryImpl @Inject constructor (
     @SuppressLint("CheckResult")
     override fun getArticles(category: String): Flowable<List<Article>> {
         return Flowable.create({ emitter ->
-            val localArticlesDisposable = localDataSource
+            localDataSource
                 .getArticles(category)
-                .subscribe(emitter::onNext)
-
-            remoteDataSource.getArticles(category)
-                .subscribe ({ articles ->
-                    localArticlesDisposable.dispose()
-                    localDataSource.addArticles(articles, category)
-                    localDataSource.getArticles(category).subscribe(emitter::onNext)
-                }, emitter::onError)
+                .subscribe(
+                    emitter::onNext,
+                    emitter::tryOnError
+                )
         }, BackpressureStrategy.LATEST)
     }
 }
