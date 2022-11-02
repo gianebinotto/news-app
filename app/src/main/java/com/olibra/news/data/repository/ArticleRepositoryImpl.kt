@@ -6,6 +6,7 @@ import com.olibra.news.data.local.datasource.ArticleLocalDataSource
 import com.olibra.news.domain.model.Article
 import com.olibra.news.domain.repository.ArticleRepository
 import io.reactivex.BackpressureStrategy
+import io.reactivex.Completable
 import io.reactivex.Flowable
 import javax.inject.Inject
 
@@ -24,5 +25,12 @@ class ArticleRepositoryImpl @Inject constructor (
                     emitter::tryOnError
                 )
         }, BackpressureStrategy.LATEST)
+    }
+
+    override fun updateArticles(category: String): Completable {
+        return remoteDataSource.getArticles(category)
+            .flatMapCompletable { articles ->
+                localDataSource.addArticles(articles, category)
+            }
     }
 }
