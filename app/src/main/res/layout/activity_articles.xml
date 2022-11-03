@@ -33,6 +33,7 @@
         android:layout_gravity="start"
         app:itemTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:itemIconPadding="@dimen/nav_icon_padding"
+        app:itemTextColor="@drawable/drawer_text_selector"
         app:headerLayout="@layout/navigation_drawer_header_categories"
         app:menu="@menu/navigation_drawer_categories" />
 </androidx.drawerlayout.widget.DrawerLayout>
