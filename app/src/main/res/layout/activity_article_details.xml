@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/app_bar"/>
+
+    <ScrollView
+        android:id="@+id/contentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_04"
+        android:paddingHorizontal="@dimen/spacing_04"
+        android:fillViewport="true"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/articleImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/article_details_image_height"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_article"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/articleTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/text_color_primary"
+                android:layout_marginTop="@dimen/spacing_04"
+                app:layout_constraintTop_toBottomOf="@+id/articleImageView"
+                tools:text="Article Title"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/articleAuthorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/text_color_secondary"
+                android:layout_marginTop="@dimen/spacing_01"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/articleTitleTextView"
+                tools:text="Author "/>
+
+            <TextView
+                android:id="@+id/articleContentTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_04"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/text_color_secondary"
+                app:layout_constraintTop_toBottomOf="@+id/articleAuthorTextView"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+
+            <View
+                android:id="@+id/dividerView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_dashed_height"
+                android:layout_marginTop="@dimen/spacing_04"
+                android:background="@drawable/read_more_divider_background"
+                app:layout_constraintTop_toBottomOf="@id/articleContentTextView"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/readMoreButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/min_button_height"
+                android:layout_marginTop="@dimen/spacing_01"
+                android:text="@string/read_more_button"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/text_color_primary"
+                app:iconTint="@color/text_color_primary"
+                app:icon="@drawable/ic_open_url"
+                app:iconSize="@dimen/button_drawable_size"
+                app:iconGravity="textEnd"
+                app:layout_constraintTop_toBottomOf="@+id/dividerView"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/emptyArticleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:text="@string/article_details_empty_state"
+        android:textColor="@color/text_color_secondary"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        app:drawableTopCompat="@drawable/ic_article"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
