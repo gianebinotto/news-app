@@ -5,7 +5,7 @@ import com.olibra.news.domain.model.Article
 
 class ArticleLocalMapper {
 
-    fun fromEntityToDomain(articleEntity: ArticleEntity, category: String): Article {
+    fun fromEntityToDomain(articleEntity: ArticleEntity): Article {
         return with(articleEntity) {
             Article(
                 id = id,

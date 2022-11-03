@@ -8,6 +8,7 @@ import com.olibra.news.domain.repository.ArticleRepository
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 import javax.inject.Inject
 
 class ArticleRepositoryImpl @Inject constructor (
@@ -25,6 +26,10 @@ class ArticleRepositoryImpl @Inject constructor (
                     emitter::tryOnError
                 )
         }, BackpressureStrategy.LATEST)
+    }
+
+    override fun getArticleById(articleId: String): Single<Article> {
+        return localDataSource.getArticleById(articleId)
     }
 
     override fun updateArticles(category: String): Completable {
