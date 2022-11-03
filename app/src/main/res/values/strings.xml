@@ -3,8 +3,8 @@
 
     <!-- Articles content descriptions -->
     <string name="content_desc_article_read">Article Read</string>
-    <string name="content_desc_open_drawer">Abrir gaveta de navegação</string>
-    <string name="content_desc_close_drawer">Fechar gaveta de navegação</string>
+    <string name="content_desc_open_drawer">Open navigation drawer</string>
+    <string name="content_desc_close_drawer">Close navigation drawer</string>
 
     <!-- Categories -->
     <string name="categories">Categories</string>
@@ -20,6 +20,13 @@
     <string name="world_category">World</string>
 
     <!-- Empty state -->
-    <string name="empty_state_message">No results found :(</string>
+    <string name="articles_empty_state_message">No results found :(</string>
+
+    <!-- Errors -->
+    <string name="generic_error">An error occurred. Try again.</string>
+    <string name="network_error">Problems in your connection. Verify and try again.</string>
+    <string name="service_unavailable_error">The service is unavailable, try later.</string>
+    <string name="database_error">There was a problem to access data. Try again.</string>
+    <string name="retry">Retry</string>
 
 </resources>
