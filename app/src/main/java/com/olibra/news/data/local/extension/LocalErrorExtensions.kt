@@ -1,13 +1,17 @@
 package com.olibra.news.data.local.extension
 
 import android.database.sqlite.SQLiteException
-import com.olibra.news.domain.model.Article
 import com.olibra.news.domain.model.ErrorException
 import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 
-fun Flowable<List<Article>>.handleDatabaseException() = onErrorResumeNext { throwable: Throwable ->
+fun <T> Flowable<T>.handleDatabaseException() = onErrorResumeNext { throwable: Throwable ->
     Flowable.error(getErrorException(throwable))
+}
+
+fun <T> Single<T>.handleDatabaseException() = onErrorResumeNext { throwable: Throwable ->
+    Single.error(getErrorException(throwable))
 }
 
 fun Completable.handleDatabaseException() = onErrorResumeNext { throwable ->
