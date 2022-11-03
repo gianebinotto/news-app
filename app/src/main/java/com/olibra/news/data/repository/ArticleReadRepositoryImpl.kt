@@ -14,6 +14,10 @@ class ArticleReadRepositoryImpl @Inject constructor(
         return articleReadLocalDataSource.getArticlesRead()
     }
 
+    override fun isArticleRead(articleId: String): Single<Boolean> {
+        return articleReadLocalDataSource.isArticleRead(articleId)
+    }
+
     override fun addArticleRead(articleId: String): Completable {
         return articleReadLocalDataSource.addArticleRead(articleId)
     }

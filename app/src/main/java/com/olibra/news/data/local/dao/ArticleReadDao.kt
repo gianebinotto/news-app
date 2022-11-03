@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.olibra.news.data.local.model.ArticleReadEntity
 import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.Single
 
 @Dao
@@ -19,4 +20,7 @@ interface ArticleReadDao {
 
     @Query("SELECT * FROM articlesRead")
     fun getAll(): Single<List<ArticleReadEntity>>
+
+    @Query("SELECT * FROM articlesRead where article_id = :articleId LIMIT 1")
+    fun getByArticleId(articleId: String): Maybe<ArticleReadEntity>
 }
