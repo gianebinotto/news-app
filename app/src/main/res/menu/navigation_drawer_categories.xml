@@ -8,43 +8,43 @@
 
         <item
             android:id="@+id/allCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/all_category" />
         <item
             android:id="@+id/automobileCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/automobile_category" />
         <item
             android:id="@+id/businessCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/business_category" />
         <item
             android:id="@+id/entertainmentCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/entertainment_category" />
         <item
             android:id="@+id/miscellaneousCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/miscellaneous_category" />
         <item
             android:id="@+id/politicsCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/politics_category" />
         <item
             android:id="@+id/scienceCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/science_category" />
         <item
             android:id="@+id/startupCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/startup_category" />
         <item
             android:id="@+id/technologyCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/technology_category" />
         <item
             android:id="@+id/worldCategoryItem"
-            android:icon="@drawable/ic_category"
+            android:icon="@drawable/drawer_icon_selector"
             android:title="@string/world_category" />
     </group>
 </menu>
