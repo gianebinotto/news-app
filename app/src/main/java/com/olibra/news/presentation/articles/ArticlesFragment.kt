@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.olibra.news.databinding.FragmentArticlesBinding
+import com.olibra.news.presentation.articledetails.ArticleDetailsActivity
 import com.olibra.news.presentation.articles.listcomponent.ArticlesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -103,7 +104,8 @@ class ArticlesFragment: Fragment() {
     }
 
     private fun navigateToArticle(articleId: String) {
-        // to be implemented
+        val intent = ArticleDetailsActivity.getIntent(requireContext(), articleId)
+        startActivity(intent)
     }
 
     private fun stopSwipeRefresh() {
