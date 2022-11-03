@@ -13,27 +13,16 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
-            android:fitsSystemWindows="true">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/toolbar_color"
-                style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
-                android:elevation="0dp" />
-
-        </com.google.android.material.appbar.AppBarLayout>
+        <include
+            android:id="@+id/appBarLayout"
+            layout="@layout/app_bar"/>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/articlesFragmentContainerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            android:name="com.olibra.news.presentation.articles.ArticlesFragment"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
