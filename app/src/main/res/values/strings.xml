@@ -28,5 +28,17 @@
     <string name="service_unavailable_error">The service is unavailable, try later.</string>
     <string name="database_error">There was a problem to access data. Try again.</string>
     <string name="retry">Retry</string>
+    <string name="mark_article_as_read_error">There was a problem to mark article as read. Try again.</string>
+    <string name="mark_article_as_unread_error">There was a problem to mark article as unread. Try again</string>
+
+    <!-- Article details -->
+    <string name="article_details_title">Article details</string>
+    <string name="read_more_button">Read more</string>
+    <string name="article_author">by %1s ▪ %2s</string>
+    <string name="article_details_empty_state">An error occurred :(</string>
+
+    <!-- Articles details content descriptions -->
+    <string name="content_desc_mark_article_as_read">Mark article as read</string>
+    <string name="content_desc_mark_article_as_unread">Mark article as unread</string>
 
 </resources>

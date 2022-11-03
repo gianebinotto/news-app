@@ -21,7 +21,13 @@
     <dimen name="article_empty_state_image_width">100dp</dimen>
     <dimen name="article_empty_state_image_height">100dp</dimen>
 
+    <dimen name="article_details_image_height">200dp</dimen>
+
     <dimen name="nav_icon_padding">36dp</dimen>
 
+    <dimen name="min_button_height">48dp</dimen>
+    <dimen name="button_drawable_size">24dp</dimen>
+
     <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_dashed_height">3dp</dimen>
 </resources>
