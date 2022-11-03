@@ -25,8 +25,8 @@ class ArticlesActivity : AppCompatActivity() {
     }
 
     private fun setupActionBar() {
-        setSupportActionBar(binding.toolbar)
-        binding.toolbar.setNavigationOnClickListener {
+        setSupportActionBar(binding.appBarLayout.toolbar)
+        binding.appBarLayout.toolbar.setNavigationOnClickListener {
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
     }
@@ -41,7 +41,7 @@ class ArticlesActivity : AppCompatActivity() {
         val toggle = ActionBarDrawerToggle(
             this,
             binding.drawerLayout,
-            binding.toolbar,
+            binding.appBarLayout.toolbar,
             R.string.content_desc_open_drawer,
             R.string.content_desc_close_drawer
         )
