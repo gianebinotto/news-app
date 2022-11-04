@@ -1,8 +1,6 @@
 package com.olibra.news.commontest
 
 import com.olibra.news.domain.model.Article
-import java.text.SimpleDateFormat
-import java.util.Date
 
 object ArticlesDataTest {
 
@@ -12,7 +10,7 @@ object ArticlesDataTest {
             title = "Article title",
             content = "Content here",
             author = "John Doe",
-            date = getFixedDate(),
+            date = getFixedDate("11/03/2022"),
             imageUrl = "Image url here",
             readMoreUrl = "Read more url here",
             category = "all"
@@ -25,11 +23,5 @@ object ArticlesDataTest {
             articles.add(getArticle(id.toString()))
         }
         return articles
-    }
-
-    private fun getFixedDate(): Date {
-        val date = "11/01/2022"
-        val format = SimpleDateFormat("MM/dd/yyyy")
-        return format.parse(date) ?: Date()
     }
 }
