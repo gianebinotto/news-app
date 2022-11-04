@@ -4,11 +4,11 @@ import com.olibra.news.data.api.service.ArticleService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ViewModelComponent
 import retrofit2.Retrofit
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object ServiceModule {
 
     @Provides
