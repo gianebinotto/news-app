@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.annotation.IdRes
 import androidx.annotation.StringRes
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -23,8 +25,11 @@ class ArticlesFragment: Fragment() {
     private var _binding: FragmentArticlesBinding? = null
     private val binding get() = _binding!!
 
+    private var imageViewSharedTransition: ImageView? = null
+
     private val adapter: ArticlesAdapter by lazy {
-        ArticlesAdapter { articleId ->
+        ArticlesAdapter { articleId, imageView ->
+            imageViewSharedTransition = imageView
             viewModel.onArticleClicked(articleId)
         }
     }
@@ -104,8 +109,23 @@ class ArticlesFragment: Fragment() {
     }
 
     private fun navigateToArticle(articleId: String) {
-        val intent = ArticleDetailsActivity.getIntent(requireContext(), articleId)
-        startActivity(intent)
+        val intent = ArticleDetailsActivity.getIntent(
+            requireContext(),
+            articleId,
+            imageViewSharedTransition?.transitionName
+        )
+
+        imageViewSharedTransition?.let { imageView ->
+            val options: ActivityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this.requireActivity(),
+                imageView,
+                imageViewSharedTransition?.transitionName.orEmpty()
+            )
+
+            startActivity(intent, options.toBundle())
+        } ?: run {
+            startActivity(intent)
+        }
     }
 
     private fun stopSwipeRefresh() {

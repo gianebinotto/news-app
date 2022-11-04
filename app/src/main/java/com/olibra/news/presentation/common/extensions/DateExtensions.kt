@@ -5,6 +5,6 @@ import java.util.Date
 import java.util.Locale
 
 fun Date.format(): String {
-    val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
+    val format = SimpleDateFormat("MM/dd/yyyy", Locale.US)
     return format.format(this)
 }

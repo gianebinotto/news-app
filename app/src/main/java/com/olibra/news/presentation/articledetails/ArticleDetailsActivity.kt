@@ -19,6 +19,7 @@ import com.olibra.news.presentation.common.extensions.load
 import dagger.hilt.android.AndroidEntryPoint
 
 private const val ARTICLE_ID = "articleId"
+private const val TRANSITION_NAME = "transitionName"
 
 @AndroidEntryPoint
 class ArticleDetailsActivity: AppCompatActivity() {
@@ -34,6 +35,7 @@ class ArticleDetailsActivity: AppCompatActivity() {
         binding = ActivityArticleDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupSharedElementTransition()
         setupActionBar()
         setupListeners()
         setupObservers()
@@ -74,6 +76,11 @@ class ArticleDetailsActivity: AppCompatActivity() {
             }
         }
         return super.onPrepareOptionsMenu(menu)
+    }
+
+    private fun setupSharedElementTransition() {
+        val imageTransitionName: String? = intent.extras?.getString(TRANSITION_NAME)
+        binding.articleImageView.transitionName = imageTransitionName
     }
 
     private fun setupActionBar() {
@@ -142,9 +149,10 @@ class ArticleDetailsActivity: AppCompatActivity() {
     }
 
     companion object {
-        fun getIntent(context: Context, articleId: String): Intent {
+        fun getIntent(context: Context, articleId: String, transitionName: String?): Intent {
             return Intent(context, ArticleDetailsActivity::class.java).apply {
                 putExtra(ARTICLE_ID, articleId)
+                putExtra(TRANSITION_NAME, transitionName)
             }
         }
     }
